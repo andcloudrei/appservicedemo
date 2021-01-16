@@ -15,15 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout
+      - uses: actions/checkout@master
 
       - name: Login via Azure CLI
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-
-      -name: SETUP .NET CORE
+          
+          
+      - name: SETUP .NET CORE
        uses: actions/setup-dotnet@v1
        with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
